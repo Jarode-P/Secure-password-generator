@@ -1,0 +1,379 @@
+/* ===================================================
+   GÉNÉRATEUR DE MOT DE PASSE SÉCURISÉ - STYLES CSS
+   Design sombre et moderne - Version simplifiée
+   =================================================== */
+
+/* ===== VARIABLES CSS ===== */
+:root {
+    --primary-color: #2962ff;
+    --secondary-color: #0039cb;
+    --accent-color: #768fff;
+    --background-color: #0a0e17;
+    --surface-color: #141922;
+    --surface-elevated: #1e2530;
+    --surface-card: #232b3d;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a8b5;
+    --text-muted: #6b7280;
+    --error-color: #ff4757;
+    --success-color: #2ed573;
+    --warning-color: #ffa502;
+    --border-color: rgba(118, 143, 255, 0.1);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 8px 32px rgba(41, 98, 255, 0.12), 0 2px 16px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 16px 64px rgba(41, 98, 255, 0.18), 0 4px 32px rgba(0, 0, 0, 0.35);
+    --gradient-primary: linear-gradient(135deg, #2962ff 0%, #768fff 100%);
+    --gradient-surface: linear-gradient(135deg, #1e2530 0%, #232b3d 100%);
+    --gradient-bg: radial-gradient(ellipse at top, #1a2137 0%, #0a0e17 70%);
+    
+    /* Espacements simplifiés */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    
+    /* Polices */
+    --font-family: 'Segoe UI', system-ui, sans-serif;
+    --border-radius: 8px;
+}
+
+/* ===== RESET ET BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--gradient-bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+/* ===== CONTENEUR PRINCIPAL ===== */
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ===== CONTENEUR PRINCIPAL FLEX ===== */
+.main-container {
+    display: flex;
+    gap: var(--space-xl);
+    align-items: flex-start;
+    width: 100%;
+    margin-top: var(--space-lg);
+}
+
+/* ===== COLONNES ===== */
+.form-column {
+    flex: 1;
+    min-width: 0; /* Permet au contenu de se rétrécir */
+}
+
+.password-column {
+    flex: 1;
+    min-width: 0; /* Permet au contenu de se rétrécir */
+}
+
+/* ===== TITRE ===== */
+h1 {
+    color: var(--text-primary);
+    font-size: 2.2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0 0 var(--space-md) 0; /* Supprime les marges du haut */
+    text-align: left; /* Aligné à gauche dans sa colonne */
+}
+
+/* Titre dans la colonne de droite */
+.password-column h2 {
+    margin-bottom: var(--space-lg);
+}
+
+/* ===== FORMULAIRE ===== */
+#password-form {
+    background: var(--gradient-surface);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    width: 100%;
+    border: 1px solid var(--border-color);
+    height: fit-content; /* S'adapte au contenu */
+}
+
+/* ===== LABELS ===== */
+label {
+    display: block;
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    font-size: 1rem;
+}
+
+/* ===== CHAMP NOMBRE ===== */
+input[type="number"] {
+    width: 100%;
+    padding: var(--space-md);
+    background: var(--surface-elevated);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--text-primary);
+    font-size: 1rem;
+    margin-bottom: var(--space-lg);
+    transition: all 0.3s ease;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.2);
+}
+
+/* ===== CHECKBOXES ===== */
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: var(--space-sm);
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* Conteneur pour les checkboxes */
+label[for="uppercase"],
+label[for="numbers"], 
+label[for="symbols"] {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    cursor: pointer;
+    font-weight: 400;
+}
+
+/* ===== BOUTON PRINCIPAL ===== */
+button[type="submit"] {
+    width: 100%;
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: var(--space-lg);
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: var(--space-md);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ===== AFFICHAGE DU MOT DE PASSE ===== */
+#generated-password {
+    background: var(--gradient-surface);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: var(--space-lg);
+    width: 100%;
+    border: 1px solid var(--border-color);
+    height: fit-content; /* S'adapte au contenu */
+    min-height: 200px; /* Hauteur minimale pour l'équilibre visuel */
+}
+
+/* ===== CONTENEUR DU MOT DE PASSE ===== */
+.mot-de-passe-conteneur {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background: var(--surface-elevated);
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--space-md);
+}
+
+.mot-de-passe-texte {
+    flex: 1;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    word-break: break-all;
+    line-height: 1.4;
+    background: var(--surface-card);
+    padding: var(--space-md);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+/* ===== BOUTON COPIER ===== */
+.bouton-copier {
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    border: none;
+    padding: var(--space-md);
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.bouton-copier:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ===== INFORMATIONS DU MOT DE PASSE ===== */
+.info-mot-de-passe {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-color);
+}
+
+/* ===== DESIGN RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        gap: var(--space-lg);
+    }
+    
+    body {
+        padding: var(--space-md);
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: var(--space-lg);
+    }
+    
+    #password-form {
+        padding: var(--space-lg);
+    }
+    
+    #generated-password {
+        min-height: auto; /* Enlever la hauteur minimale sur mobile */
+    }
+    
+    .mot-de-passe-conteneur {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .bouton-copier {
+        width: 100%;
+    }
+    
+    input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    #password-form {
+        padding: var(--space-md);
+    }
+    
+    .mot-de-passe-texte {
+        font-size: 1rem;
+    }
+    
+    footer {
+        margin-top: var(--space-lg);
+        padding: var(--space-lg) 0;
+    }
+    
+    .footer-content {
+        padding: 0 var(--space-md);
+    }
+}
+
+/* ===== ÉTAT VIDE ===== */
+#generated-password:empty {
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+    padding: var(--space-xl);
+}
+
+#generated-password:empty::before {
+    content: 'Cliquez sur "Générer" pour créer votre mot de passe...';
+}
+
+/* ===== SÉLECTION DE TEXTE ===== */
+::selection {
+    background: var(--primary-color);
+    color: var(--text-primary);
+}
+
+/* ===== FOCUS POUR L'ACCESSIBILITÉ ===== */
+:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    margin-top: var(--space-xl);
+    padding: var(--space-xl) 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+.footer-content p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.footer-content p:first-child {
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+}
+
+.footer-subtitle {
+    font-size: 0.8rem !important;
+    color: var(--text-muted) !important;
+    font-style: italic;
+}
